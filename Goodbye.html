@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Poetry in Motion</title>
+	<script src = "https://code.jquery.com/jquery-2.1.0.js"></script>
+	<link rel = "stylesheet" href = "Poetry_in_Motion.css">
+</head>
+<body>
+<h1 id = "main-heading">Hello World</h1>
+<div id = "container"></div>
+<div class="wrapper">
+    <button id = "lastButton" class="button">Button</button>
+	<button id=  "btn" class = "button">One thing is needful...</button>
+</div>
+
+
+
+<script>
+
+
+//heading 
+
+var newHeading = 'Goodbye Friends!'
+$('#main-heading').text(newHeading);
+
+
+for (let i = 0; i < 11; i++) {
+$("h1").fadeOut(300).fadeIn(300); 
+}; 
+
+$('h1').fadeOut(3000); 
+
+//movement
+
+var leftOffset = 0; 
+
+var moveHeading = function () {
+	$('#main-heading').offset({left: leftOffset});
+	$('p').offset({left: leftOffset});
+	
+	leftOffset++;
+	
+	if (leftOffset > 400) {
+		leftOffset = 0;
+	}
+};
+
+setInterval(moveHeading, 30);
+
+//stanzas
+
+var friends = ['Into to the code I go,', 'Not for pleasure, fun, or show,', 'Oh but for what then, you ask...'];
+for (let i = 0; i < friends.length; i++) {
+	$('#container').append('<p>' + friends[i] + '</p>');
+};
+$('p').fadeOut(10000);
+
+//closing line, I want to make a new div under the paragraphs, and have this line appear there
+function finalLine () {
+
+const container = document.querySelector('#container');
+
+const content = document.createElement('h1')
+content.classList.add('content');
+content.textContent = 'Simply the daily task';
+content.style.backgroundColor = 'red';
+content.style.margin = '40px 700px 40px 700px';
+content.style.padding = '50px 170px 50px 50px';
+content.style.borderStyle = 'solid';
+container.appendChild(content);
+	
+};
+setTimeout(finalLine, 10000); 
+
+//buttons
+
+$(document).ready(function() {
+      $('#btn').hide().delay(10500).fadeIn(2200);
+});
+
+var btn = document.querySelector('#btn');
+btn.addEventListener('click', () => {
+ alert("To 'give style' to one’s character-- a great and rare art! It is practiced by those who survey all the strengths and weaknesses of their nature and then fit them into an artistic plan until every one of them appears as art and reason and even weaknesses delight the eye. Here a large mass of second nature has been added; there a piece of original nature has been removed -- both times through long practice and daily work at it. Here the ugly that could not be removed is concealed; there it has been reinterpreted and made sublime. Much that is vague and resisted shaping has been saved and exploited for distant views; it is meant to beckon toward the far and immeasurable. In the end, when the work is finished, it becomes evident how the constraint of a single taste governed and formed everything large and small. Whether this taste was good or bad is less important than one might suppose, if only it was a single taste! It will be the strong and domineering natures that enjoy their finest gaiety in such constraint and perfection under a law of their own; the passion of their tremendous will relaxes in the face of all stylized nature, of all conquered and serving nature. Even when they have to build palaces and design gardens they demur at giving nature freedom.");
+
+
+});
+
+$(document).ready(function() {
+      $('#btn').hide().delay(10500).fadeIn(2200);
+});
+
+/* $(document).ready(function() {
+      $('#lastButton').hide().delay(10500).fadeIn(2200);
+}); */
+
+
+
+
+
+
+</script>
+</body>
+</html>
