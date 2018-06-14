@@ -23,3 +23,11 @@ a { /* Comment */ color: /* Comment */ Red; }
 	position: absolute;
     top: 50%;
  }
+
+ body {
+ 	background-color: pink;
+ }
+
+ #myDIV {
+ 	text-align: center;
+ }

@@ -5,12 +5,19 @@
 	<script src = "https://code.jquery.com/jquery-2.1.0.js"></script>
 	<link rel = "stylesheet" href = "Poetry_in_Motion.css">
 </head>
-<body>
+<body id = "backgrnd">
+
 <h1 id = "main-heading">Hello World</h1>
+
 <div id = "container"></div>
-<div class="wrapper">
-    <button id = "lastButton" class="button">Button</button>
+
+<div class = "wrapper">
+    <button id = "lastButton" class = "button" onclick="myFunction()">Don't Click Me</button>
 	<button id=  "btn" class = "button">One thing is needful...</button>
+</div>
+
+<div id="myDIV">
+  <h2>I want to stay...please...let me stay...</h2>
 </div>
 
 
@@ -74,10 +81,6 @@ setTimeout(finalLine, 10000);
 
 //buttons
 
-$(document).ready(function() {
-      $('#btn').hide().delay(10500).fadeIn(2200);
-});
-
 var btn = document.querySelector('#btn');
 btn.addEventListener('click', () => {
  alert("To 'give style' to one’s character-- a great and rare art! It is practiced by those who survey all the strengths and weaknesses of their nature and then fit them into an artistic plan until every one of them appears as art and reason and even weaknesses delight the eye. Here a large mass of second nature has been added; there a piece of original nature has been removed -- both times through long practice and daily work at it. Here the ugly that could not be removed is concealed; there it has been reinterpreted and made sublime. Much that is vague and resisted shaping has been saved and exploited for distant views; it is meant to beckon toward the far and immeasurable. In the end, when the work is finished, it becomes evident how the constraint of a single taste governed and formed everything large and small. Whether this taste was good or bad is less important than one might suppose, if only it was a single taste! It will be the strong and domineering natures that enjoy their finest gaiety in such constraint and perfection under a law of their own; the passion of their tremendous will relaxes in the face of all stylized nature, of all conquered and serving nature. Even when they have to build palaces and design gardens they demur at giving nature freedom.");
@@ -89,10 +92,24 @@ $(document).ready(function() {
       $('#btn').hide().delay(10500).fadeIn(2200);
 });
 
-/* $(document).ready(function() {
-      $('#lastButton').hide().delay(10500).fadeIn(2200);
-}); */
 
+const backgrnd = document.querySelector('#backgrnd');
+
+
+
+var lastButton = document.querySelector('#lastButton');
+lastButton.addEventListener('click', () => {
+	backgrnd.style.backgroundColor = 'yellow';
+});
+
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
 
 
 
